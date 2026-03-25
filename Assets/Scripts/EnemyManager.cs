@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    [SerializeField] private GameObject _enemyPrefab;
+    private GameObject _enemyPrefab;
+    private GameObject _enemyBloodPrefab;
 
     private float _createEnemyInterval;
 
@@ -15,6 +16,8 @@ public class EnemyManager : MonoBehaviour
         {
             throw new UnityException("Couldn't load Enemy prefab from Resources!");
         }
+
+        _enemyBloodPrefab = Resources.Load<GameObject>("Prefabs/EnemyBlood");
 
         for (int i = 0; i < Settings.Instance.StartingEnemyCount; i++)
         {
@@ -41,6 +44,8 @@ public class EnemyManager : MonoBehaviour
         newEnemy.transform.position = new Vector2(
             x: Random.Range(-8, 8),
             y: Random.Range(-4, 4));
+
+        newEnemy.GetComponent<EnemyDeath>().Init(this);
     }
 
     void Update()
@@ -51,5 +56,10 @@ public class EnemyManager : MonoBehaviour
         {
             _createEnemyInterval = Settings.Instance.MinCreateEnemyInterval;
         }
+    }
+
+    public void CreateEnemyBlood(Vector2 position)
+    {
+        GameObject blood = Instantiate(original: _enemyBloodPrefab, position: position, rotation: Quaternion.identity);
     }
 }
