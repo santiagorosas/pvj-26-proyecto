@@ -10,12 +10,16 @@ public class EnemyChase : MonoBehaviour
 
         if (_playerTransform == null)
         {
-            throw new UnityException();
+            return;
         }
     }
 
     void Update()
     {
+        if (_playerTransform == null)
+        {
+            return;
+        }
         Vector2 playerPosition = _playerTransform.position;
         Vector2 myPosition = transform.position;
 
