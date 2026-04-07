@@ -9,6 +9,7 @@ public class PlayerDeath : MonoBehaviour
     {
         if (collision.tag == "Enemy")
         {
+            SoundManager.Instance.PlayerDeath.Play();
             OnDeath?.Invoke();
             Destroy(gameObject);
         }

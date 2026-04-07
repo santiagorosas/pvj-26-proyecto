@@ -13,6 +13,7 @@ public class EnemyDeath : MonoBehaviour
     {
         if (collision.GetComponent<PlayerShot>())
         {
+            SoundManager.Instance.EnemyDeath.Play();
             Destroy(gameObject);
             _enemyManager.CreateEnemyBlood(transform.position);
         }
