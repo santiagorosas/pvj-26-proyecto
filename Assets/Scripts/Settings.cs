@@ -7,10 +7,11 @@ public class Settings : ScriptableObject
     static public Settings Instance;
 
 
-
-    public void OnEnable()
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    private static void Init()
     {
-        Instance = this;
+        Debug.Log("init");
+        Instance = Resources.Load<Settings>("Settings");
     }
 
     [Tooltip("Defines the speed of the player")]

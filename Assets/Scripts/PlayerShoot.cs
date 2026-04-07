@@ -27,6 +27,7 @@ public class PlayerShoot : MonoBehaviour
     {
         while (true)
         {
+            Debug.Log("settings instance: " + Settings.Instance);
             yield return new WaitForSeconds(Settings.Instance.PlayerShootInterval);
             Shoot();
         }
