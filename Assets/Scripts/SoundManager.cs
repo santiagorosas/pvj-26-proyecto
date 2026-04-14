@@ -12,6 +12,7 @@ public class SoundManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame

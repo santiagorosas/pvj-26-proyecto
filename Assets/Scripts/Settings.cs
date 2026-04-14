@@ -25,6 +25,6 @@ public class Settings : ScriptableObject
     public float BaseCreateEnemyInterval = 3;
     public float CreateEnemyIntervalDecreasePerSecond = 0.1f;
     public float MinCreateEnemyInterval = 0.3f;
-
     public string MainSceneName = "Main";
+    public int ScorePerEnemy = 5;
 }

@@ -1,7 +1,10 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemyDeath : MonoBehaviour
 {
+    public static event UnityAction OnDeath;
+
     private EnemyManager _enemyManager;
 
     public void Init(EnemyManager enemyManager)
@@ -16,6 +19,7 @@ public class EnemyDeath : MonoBehaviour
             SoundManager.Instance.EnemyDeath.Play();
             Destroy(gameObject);
             _enemyManager.CreateEnemyBlood(transform.position);
+            OnDeath?.Invoke();
         }
     }
 }
