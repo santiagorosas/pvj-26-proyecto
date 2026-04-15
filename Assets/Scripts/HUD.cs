@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
@@ -8,6 +9,7 @@ public class HUD : MonoBehaviour
     private static HUD _instance;
 
     [SerializeField] private TextMeshProUGUI _scoreText;
+    [SerializeField] private Image _hpFillImage;
 
     private int _score;
 
@@ -40,6 +42,12 @@ public class HUD : MonoBehaviour
     {
         _score += Settings.Instance.ScorePerEnemy;
         _scoreText.text = _score.ToString();
+    }
+
+    private void HandlePlayerHit()
+    {
+        _hpFillImage.fillAmount = 0.5f;
+           
     }
 
     public void HandleTestButtonClick()
