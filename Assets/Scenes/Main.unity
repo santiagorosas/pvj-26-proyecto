@@ -236,6 +236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   _scoreText: {fileID: 379842701}
+  _hpFillImage: {fileID: 0}
 --- !u!4 &58222755 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 361829382198987463, guid: b22134e4ad6d73541b67c16cbacf9121, type: 3}
@@ -2479,7 +2480,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1056865478
 RectTransform:
   m_ObjectHideFlags: 0
