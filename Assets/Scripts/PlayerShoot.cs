@@ -35,7 +35,7 @@ public class PlayerShoot : MonoBehaviour
     private void Shoot()
     {
         GameObject shotObject = Instantiate(original: _shotPrefab, position: transform.position, rotation: Quaternion.identity);
-        shotObject.GetComponent<PlayerShot>().Init(Direction);
+        shotObject.GetComponent<PlayerShot>().Init(_movement.Velocity, Direction);
     }
 
 

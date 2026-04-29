@@ -13,6 +13,9 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _lastNonZeroDirection;
 
     private Rigidbody2D _rigidbody;
+    private Vector2 _velocity;
+
+    public Vector2 Velocity { get => _velocity; }
 
     private void Awake()
     {
@@ -22,13 +25,10 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+
+        _lastNonZeroDirection = Vector2.down;
     }
 
-    void Update()
-    {
-        
-        
-    }
 
     void FixedUpdate()
     {
@@ -68,12 +68,9 @@ public class PlayerMovement : MonoBehaviour
             direction.y += 1;
         }
 
-        Vector3 velocity = direction.normalized * Speed;
+        _velocity = direction.normalized * Speed;
 
-        Vector3 position = _rigidbody.position;
-        _rigidbody.MovePosition(position + velocity * Time.deltaTime);
-
-        //transform.position += velocity * Time.deltaTime;
+        _rigidbody.MovePosition(_rigidbody.position + _velocity * Time.deltaTime);
 
         if (direction != Vector3.zero)
         {
