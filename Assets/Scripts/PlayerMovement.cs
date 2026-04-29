@@ -4,18 +4,38 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static PlayerMovement Instance;
+
     public Vector2 LastNonZeroDirection => _lastNonZeroDirection;
 
     private float Speed => Settings.Instance.PlayerSpeed;
 
     private Vector2 _lastNonZeroDirection;
 
-    // Update is called once per frame
+    private Rigidbody2D _rigidbody;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    void Start()
+    {
+        _rigidbody = GetComponent<Rigidbody2D>();
+    }
+
     void Update()
+    {
+        
+        
+    }
+
+    void FixedUpdate()
     {
         UpdateKeyboardInput();
         UpdateMouseInput();
     }
+
 
     private void UpdateMouseInput()
     {
@@ -49,12 +69,15 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Vector3 velocity = direction.normalized * Speed;
-        transform.position += velocity * Time.deltaTime;
+
+        Vector3 position = _rigidbody.position;
+        _rigidbody.MovePosition(position + velocity * Time.deltaTime);
+
+        //transform.position += velocity * Time.deltaTime;
 
         if (direction != Vector3.zero)
         {
             _lastNonZeroDirection = direction;
         }
-
     }
 }

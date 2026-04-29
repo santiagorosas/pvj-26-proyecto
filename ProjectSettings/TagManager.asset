@@ -48,11 +48,8 @@ TagManager:
   - name: EnemyBlood
     uniqueID: 2545215459
     locked: 0
-  - name: Player
+  - name: World
     uniqueID: 2499672335
-    locked: 0
-  - name: Enemy
-    uniqueID: 2900559353
     locked: 0
   - name: PlayerShot
     uniqueID: 175423399
