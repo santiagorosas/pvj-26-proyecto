@@ -54,5 +54,8 @@ TagManager:
   - name: PlayerShot
     uniqueID: 175423399
     locked: 0
+  - name: Explosions
+    uniqueID: 3087496509
+    locked: 0
   m_RenderingLayers:
   - Default

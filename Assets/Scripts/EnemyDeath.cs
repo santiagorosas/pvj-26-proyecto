@@ -5,11 +5,15 @@ public class EnemyDeath : MonoBehaviour
 {
     public static event UnityAction OnDeath;
 
+    private ExplosionManager _explosionManager;
+
     private EnemyManager _enemyManager;
 
     public void Init(EnemyManager enemyManager)
     {
         _enemyManager = enemyManager;
+
+        _explosionManager = Utils.Find<ExplosionManager>();
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -20,6 +24,8 @@ public class EnemyDeath : MonoBehaviour
             Destroy(gameObject);
             _enemyManager.CreateEnemyBlood(transform.position);
             OnDeath?.Invoke();
+
+            _explosionManager.CreateExplosion(transform.position);
         }
     }
 }
