@@ -17,6 +17,13 @@ public class PlayerShot : MonoBehaviour
     {
         Vector3 deltaPos = _velocity * Time.deltaTime;
         transform.position += deltaPos;
+
+        // When out of screen, destroy
+        Vector3 viewportPos = Camera.main.WorldToViewportPoint(transform.position);
+        if (viewportPos.x < 0 || viewportPos.x > 1 || viewportPos.y < 0 || viewportPos.y > 1)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
