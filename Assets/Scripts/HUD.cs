@@ -11,6 +11,7 @@ public class HUD : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _scoreText;
     [SerializeField] private Image _hpFillImage;
 
+
     private int _score;
 
     void Start()
@@ -36,12 +37,16 @@ public class HUD : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
         _instance = this;
+
+
     }
 
     private void HandleEnemyDeath()
     {
         _score += Settings.Instance.ScorePerEnemy;
         _scoreText.text = _score.ToString();
+
+        GameUtils.ScaleJump(_scoreText.transform.parent.gameObject);
     }
 
     private void HandlePlayerHit()

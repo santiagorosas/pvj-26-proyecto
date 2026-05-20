@@ -10,6 +10,8 @@ public class Game : MonoBehaviour
     {
         Resume();
         PlayerDeath.OnDeath += HandlePlayerDeath;
+
+        Persistence.IsMovementTutorialCompleted = true;
     }
 
     private void HandlePlayerDeath()

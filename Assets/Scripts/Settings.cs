@@ -27,4 +27,8 @@ public class Settings : ScriptableObject
     public float MinCreateEnemyInterval = 0.3f;
     public string MainSceneName = "Main";
     public int ScorePerEnemy = 5;
+
+    [Header("Tweens")]
+    public float _scaleJumpTargetScale = 2;
+    public float _scaleJumpTime = 0.5f;
 }
