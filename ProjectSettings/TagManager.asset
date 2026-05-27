@@ -45,6 +45,9 @@ TagManager:
   - name: Background
     uniqueID: 3045934565
     locked: 0
+  - name: Ground
+    uniqueID: 3511609813
+    locked: 0
   - name: EnemyBlood
     uniqueID: 2545215459
     locked: 0
@@ -56,6 +59,12 @@ TagManager:
     locked: 0
   - name: Explosions
     uniqueID: 3087496509
+    locked: 0
+  - name: Obstacles
+    uniqueID: 4117764281
+    locked: 0
+  - name: Decoration
+    uniqueID: 2169351567
     locked: 0
   m_RenderingLayers:
   - Default
