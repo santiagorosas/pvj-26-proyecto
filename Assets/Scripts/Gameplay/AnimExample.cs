@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class AnimExample : MonoBehaviour
 {
@@ -15,6 +17,16 @@ public class AnimExample : MonoBehaviour
     void Start()
     {
         _animator = GetComponent<Animator>();
+
+        SceneManager.LoadScene("Main");
+
+        Transition.Instance.ChangeScene("Main");
+        Transition.OnSceneLoaded += HandleSceneLoaded;
+    }
+
+    private void HandleSceneLoaded()
+    {
+        Transition.OnSceneLoaded -= HandleSceneLoaded;
     }
 
     private void SetAnimState(AnimationName name)
@@ -37,5 +49,10 @@ public class AnimExample : MonoBehaviour
         {
             _animator.SetInteger("State", 3);
         }
+    }
+
+    void OnDestroy()
+    {
+        Transition.OnSceneLoaded -= HandleSceneLoaded;
     }
 }
