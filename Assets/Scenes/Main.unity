@@ -1175,7 +1175,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &281245762
 Transform:
   m_ObjectHideFlags: 0
@@ -2441,7 +2441,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 792188144}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dfbffc929e2b1ff48bdaf9c7297987bb, type: 3}
   m_Name: 
@@ -2504,6 +2504,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7afcacec53616434291653912e0ff2e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  _raycastLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &792188155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2511,7 +2514,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 792188144}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9bdaf12877e50d743bb33ec7daca943f, type: 3}
   m_Name: 
@@ -4584,6 +4587,7 @@ SceneRoots:
   - {fileID: 587227648}
   - {fileID: 412444424}
   - {fileID: 619394802}
+  - {fileID: 1751920787}
   - {fileID: 103491141}
   - {fileID: 281245762}
   - {fileID: 1929363244}
@@ -4591,7 +4595,6 @@ SceneRoots:
   - {fileID: 384203064}
   - {fileID: 1758807}
   - {fileID: 1461859067}
-  - {fileID: 1751920787}
   - {fileID: 1927018002}
   - {fileID: 930605901}
   - {fileID: 1458010364}

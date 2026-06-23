@@ -20,12 +20,16 @@ public class EnemyDeath : MonoBehaviour
     {
         if (collision.GetComponent<PlayerShot>())
         {
-            SoundManager.Instance.EnemyDeath.Play();
-            Destroy(gameObject);
-            _enemyManager.CreateEnemyBlood(transform.position);
-            OnDeath?.Invoke();
-
-            _explosionManager.CreateExplosion(transform.position);
+            Die();
         }
+    }
+
+    public void Die()
+    {
+        SoundManager.Instance.EnemyDeath.Play();
+        Destroy(gameObject);
+        _enemyManager.CreateEnemyBlood(transform.position);
+        OnDeath?.Invoke();
+        _explosionManager.CreateExplosion(transform.position);
     }
 }
