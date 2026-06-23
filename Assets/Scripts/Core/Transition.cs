@@ -42,7 +42,7 @@ public class Transition : ReusableBehaviour
         
         LeanTween.alphaCanvas(_blackScreen.GetComponent<CanvasGroup>(), to: 1, _totalDuration * 0.5f).setOnComplete(() =>
         {
-            SceneManager.LoadScene(sceneName);
+            SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
             SceneManager.sceneLoaded += HandleSceneLoaded;
         });
     }

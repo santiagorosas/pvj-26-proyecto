@@ -20,7 +20,7 @@ public class PlayerShoot : MonoBehaviour
         _shotPrefab = Resources.Load<GameObject>("Prefabs/PlayerShot");
         _movement = GetComponent<PlayerMovement>();
 
-        StartCoroutine(ShootCoroutine());
+        //StartCoroutine(ShootCoroutine());
     }
 
     private IEnumerator ShootCoroutine()
