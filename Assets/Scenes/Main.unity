@@ -2506,7 +2506,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   _raycastLayerMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 768
 --- !u!114 &792188155
 MonoBehaviour:
   m_ObjectHideFlags: 0
